@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import '../../App.css';
+import Navbar from './navigation/Navbar';
 
 function Header() {
 
@@ -23,11 +24,13 @@ function Header() {
     position: absolute;
     top: 0;
     left: 50%;
+    z-index: 9;
 `
 
 
     return (
         <Header>
+            <Navbar />
             <Box src={require('../../assets/Vector Smart Object.png')} />
             <BoxTransparent src={require('../../assets/bg_background.png')} />
         </Header>
