@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import '../../App.css';
 import Navbar from './navigation/Navbar';
+import Content from './content/Content';
 
 function Header() {
 
@@ -33,6 +34,7 @@ function Header() {
             <Navbar />
             <Box src={require('../../assets/Vector Smart Object.png')} />
             <BoxTransparent src={require('../../assets/bg_background.png')} />
+            <Content />
         </Header>
     );
 }
