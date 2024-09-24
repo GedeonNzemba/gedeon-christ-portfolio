@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import './App.css';
 import Header from './components/header/Header';
+import Main from './components/main/Main';
 
 function App() {
 
@@ -13,21 +14,10 @@ function App() {
     height: 400vh;
   `
 
-  const Main = styled.main`
-    display: block;
-    background-image: url(${require('./assets/back_blure.png')});
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 5rem;
-  `
   return (
     <Application>
       <Header />
-      <Main>
-
-      </Main>
+      <Main />
     </Application>
   );
 }

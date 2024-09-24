@@ -20,6 +20,8 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: ${(props) => props.fontWeight};
   border: none;
   padding: 10px 20px;
+  height: fit-content;
+  width: fit-content;
   text-transform: capitalize;
   cursor: pointer;
   transition: all 0.3s ease;
