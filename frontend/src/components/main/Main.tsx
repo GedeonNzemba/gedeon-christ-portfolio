@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import '../../App.css';
 import About from '../about/About';
+import MySkills from '../skills/MySkills';
 
 function Main() {
   const Container = styled.main`
@@ -16,6 +17,7 @@ function Main() {
   return (
       <Container>
         <About />
+        <MySkills />
       </Container>
   );
 }

@@ -11,6 +11,7 @@ function About() {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 10rem;
   `
   const Section = styled.section<{image?: boolean}>`
     position: relative;
