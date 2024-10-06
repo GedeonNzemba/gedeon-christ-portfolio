@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import '../../App.css';
 import About from '../about/About';
 import MySkills from '../skills/MySkills';
+import Project from '../project/Project';
 
 function Main() {
   const Container = styled.main`
@@ -18,6 +19,7 @@ function Main() {
       <Container>
         <About />
         <MySkills />
+        <Project />
       </Container>
   );
 }

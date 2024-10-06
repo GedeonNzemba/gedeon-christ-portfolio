@@ -11,7 +11,7 @@ function App() {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 400vh;
+    height: 800vh;
   `
 
   return (

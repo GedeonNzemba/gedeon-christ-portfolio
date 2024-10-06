@@ -7,8 +7,8 @@ function MySkills() {
 
     const MySkillsContainer = styled.div`
         display: block;
-        margin-top: 10rem;
-        margin-bottom: 10rem;
+        margin-top: 20rem;
+        margin-bottom: 20rem;
     `
 
     const Container = styled.div<{skills?: boolean}>`
