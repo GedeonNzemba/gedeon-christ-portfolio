@@ -4,6 +4,7 @@ import '../../App.css';
 import About from '../about/About';
 import MySkills from '../skills/MySkills';
 import Project from '../project/Project';
+import Blogs from '../blogs/Blogs';
 
 function Main() {
   const Container = styled.main`
@@ -20,6 +21,7 @@ function Main() {
         <About />
         <MySkills />
         <Project />
+        <Blogs />
       </Container>
   );
 }

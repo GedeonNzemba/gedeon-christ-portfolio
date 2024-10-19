@@ -2,13 +2,17 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 
 interface ButtonProps {
-    backgroundColor: string;
+    backgroundColor?: string;
     textColor: string;
-    hoverBackgroundColor: string;
-    hoverTextColor: string;
-    fontFamily: string;
+    hoverBackgroundColor?: string;
+    hoverTextColor?: string;
+    fontFamily?: string;
     round?: boolean;
-    fontWeight: string | number;
+    fontWeight?: string | number;
+    fontSize?: string;
+    alignSelf?: string;
+    padding?: string;
+    textTransform?: string;
     onClick?: () => void;
     children: React.ReactNode;
 }
@@ -18,6 +22,10 @@ const StyledButton = styled.button<ButtonProps>`
   color: ${(props) => props.textColor};
   font-family: ${(props) => props.fontFamily};
   font-weight: ${(props) => props.fontWeight};
+  font-size: ${(props) => props.fontSize};
+  align-self: ${(props) => props.alignSelf};
+  padding: ${(props) => props.padding};
+  text-transform: ${(props) => props.textTransform};
   border: none;
   padding: 10px 20px;
   height: fit-content;
@@ -44,6 +52,10 @@ const Button: FC<ButtonProps> = ({
     hoverTextColor,
     fontFamily,
     fontWeight,
+    fontSize,
+    textTransform,
+    alignSelf,
+    padding,
     round,
     onClick,
     children,
@@ -56,6 +68,10 @@ const Button: FC<ButtonProps> = ({
             hoverTextColor={hoverTextColor}
             fontFamily={fontFamily}
             fontWeight={fontWeight}
+            textTransform={textTransform}
+            fontSize={fontSize}
+            alignSelf={alignSelf}
+            padding={padding}
             round={round}
             onClick={onClick}
         >
