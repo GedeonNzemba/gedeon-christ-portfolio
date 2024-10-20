@@ -11,7 +11,8 @@ interface ButtonProps {
     fontWeight?: string | number;
     fontSize?: string;
     alignSelf?: string;
-    padding?: string;
+    padding?: boolean;
+    type?: 'submit' | 'reset';
     textTransform?: string;
     onClick?: () => void;
     children: React.ReactNode;
@@ -24,10 +25,9 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: ${(props) => props.fontWeight};
   font-size: ${(props) => props.fontSize};
   align-self: ${(props) => props.alignSelf};
-  padding: ${(props) => props.padding};
   text-transform: ${(props) => props.textTransform};
   border: none;
-  padding: 10px 20px;
+  padding: ${(props) => props.padding ? '0.8rem 3rem' : '10px 20px'};
   height: fit-content;
   width: fit-content;
   text-transform: capitalize;
@@ -56,6 +56,7 @@ const Button: FC<ButtonProps> = ({
     textTransform,
     alignSelf,
     padding,
+    type,
     round,
     onClick,
     children,
@@ -73,6 +74,7 @@ const Button: FC<ButtonProps> = ({
             alignSelf={alignSelf}
             padding={padding}
             round={round}
+            type={type}
             onClick={onClick}
         >
             {children}

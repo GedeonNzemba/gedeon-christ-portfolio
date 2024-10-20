@@ -5,6 +5,8 @@ import About from '../about/About';
 import MySkills from '../skills/MySkills';
 import Project from '../project/Project';
 import Blogs from '../blogs/Blogs';
+import Contact from '../contact/Contact';
+import Footer from '../footer/Footer';
 
 function Main() {
   const Container = styled.main`
@@ -22,6 +24,8 @@ function Main() {
         <MySkills />
         <Project />
         <Blogs />
+        <Contact />
+        <Footer />
       </Container>
   );
 }

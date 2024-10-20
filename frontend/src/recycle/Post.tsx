@@ -1,67 +1,72 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import Button from './Button';
+import Heading from './Heading';
 
 interface PostProps {
-    img: string;
+    id: number;
     title: string;
-    text: string;
+    imageUrl: string;
+    description: string;
     link: string
 }
 
-const Image = styled.img`
-    object-fit: cover;
-    width: 40rem;
-    height: 30rem;
-`;
+const BlogCard = styled.div`
+  /* background-color: #2a2a2a; */
+  border-radius: 10px;
+  overflow: hidden;
+`
 
-const Title = styled.h3`
-    font-size: 2rem;
-    font-family: "Playfair Display", serif;
-    color: rgb(255, 255, 255);
-    line-height: 1.333;
-    text-align: left;
-`;
+const BlogImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`
 
-const Text = styled.p`
-  font-size: 1.8rem;
-  font-family: "Rubik";
-  color: rgba(255, 255, 255, 0.6);
-  text-align: left;
-`;
+const BlogContent = styled.div`
+  padding: 1rem;
+`
 
-const Container = styled.div`
-    display: block;
-`;
+const BlogTitle = styled.h2`
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  color: #ffffffd9;
+`
 
-const InnerContainer = styled.div`
-display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-`;
+const BlogDescription = styled.p`
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+`
 
-const Link = styled.a`
-    color: rgb(178, 30, 178);
-    font-family: "Rubik";
-    font-size: 1rem;
-    font-weight: 400;
+const ReadMoreLink = styled.a`
+  color: #b21eb2;
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
 `
 
 const Post: FC<PostProps> = ({
-    img,
+    id,
+    imageUrl,
     title,
-    text,
+    description,
     link
 }) => {
     return (
-        <Container>
-            <InnerContainer>
-                <Image src={img} alt={title} />
-                <Title>{title}</Title>
-                <Text>{text}</Text>
-                <Link href={link}>Read more &#10095; &#10095;</Link>
-            </InnerContainer>
-        </Container>
+        <BlogCard key={id}>
+        <BlogImage src={imageUrl} alt={title} />
+        <BlogContent>
+          <BlogTitle>{title}</BlogTitle>
+          <BlogDescription>{description}</BlogDescription>
+          <ReadMoreLink href={link}>Read more &gt;&gt;</ReadMoreLink>
+        </BlogContent>
+      </BlogCard>
     );
 };
 

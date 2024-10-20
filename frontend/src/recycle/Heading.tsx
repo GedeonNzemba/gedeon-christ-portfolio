@@ -5,6 +5,7 @@ interface HeadingProps {
     header?: boolean;
     title?: boolean;
     subtitle?: boolean;
+    marginBottom?: boolean;
     children: React.ReactNode;
 }
 
@@ -24,7 +25,7 @@ const Text = styled.div<HeadingProps>`
         text-align: center;
         text-transform: capitalize;
         font-weight: 800;
-        margin-bottom: 10rem;
+        margin-bottom: ${(props) => $props.marginBottom ? '3rem' : '10rem'};
     `}
 
   ${$props => $props.title && 
@@ -47,10 +48,11 @@ const Heading: FC<HeadingProps> = ({
     header,
     title,
     subtitle,
+    marginBottom,
     children
 }) => {
     return (
-        <Text header={header} title={title} subtitle={subtitle}>{children}</Text>
+        <Text header={header} title={title} subtitle={subtitle} marginBottom={marginBottom}>{children}</Text>
     );
 };
 
