@@ -2,3 +2,122 @@
   color: purple;
   font-weight: 600;
 }
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #171717; */
+  width: 100%;
+  height: 100%;
+  margin-top: 15rem;
+  padding-bottom: 1.5rem;
+}
+
+.top_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: #41584b29; */
+  max-width: 80%;
+  width: 100%;
+  padding-bottom: 8rem;
+}
+
+.top_footer_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3.5rem;
+}
+
+.top_footer_right {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 2.2rem;
+  column-gap: 2.2rem;
+}
+
+h2.footer_heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 8rem;
+  color: rgb(255, 255, 255);
+  line-height: 0.786;
+}
+
+.icon_wrapper {
+  background-color: #b21eb2;
+  color: rgb(0, 0, 0);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.bottom_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: #58415342; */
+  max-width: 80%;
+  width: 100%;
+  border-top: 0.2rem solid #b21eb2;
+}
+
+.bottom_footer_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom_footer_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.bottom_footer_navigation ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.bottom_footer_name h4 {
+  font-size: 1.8rem;
+  font-family: "Playfair Display", serif;
+  color: rgb(255, 255, 255);
+  line-height: 3.667;
+}
+
+.bottom_footer_navigation ul li {
+  list-style-type: none;
+}
+
+.bottom_footer_navigation ul li a {
+  font-size: 1.3rem;
+  font-family: 'Rubik', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 3.667;
+  text-decoration: none;
+}
+
+.bottom_footer_bottom a {
+  font-size: 1.3rem;
+  font-family: 'Rubik', sans-serif;
+  color: rgba(255, 255, 255, 0.302);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.terms {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

@@ -69,8 +69,8 @@ const Title = styled.h1`
 const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  max-width: 55rem;
+  gap: 5rem;
+  max-width: 57%;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -105,7 +105,28 @@ const Blogs = () => {
 
                 <Graphic x_outlined src={require('../../assets/x_outline.png')} alt="x outlined icon" />
                 <Graphic x src={require('../../assets/x_big.png')} alt="x icon" />
-                <br />
+               
+            </Header>
+            
+            <br />
+            <br />
+
+            <BlogGrid>
+                {blogPosts.map((post) => (
+                    <Post
+                        key={post.id}
+                        id={post.id}
+                        title={post.title}
+                        imageUrl={post.imageUrl}
+                        description={post.description}
+                        link={post.link}
+                    />
+                ))}
+            </BlogGrid>
+
+            <br />
+            <br />
+            <br />
                 <Button
                     backgroundColor="#b21eb2"
                     textColor="rgb(255, 255, 255)"
@@ -119,19 +140,6 @@ const Blogs = () => {
                 >
                     See all
                 </Button>
-            </Header>
-            <BlogGrid>
-                {blogPosts.map((post) => (
-                    <Post
-                        key={post.id}
-                        id={post.id}
-                        title={post.title}
-                        imageUrl={post.imageUrl}
-                        description={post.description}
-                        link={post.link}
-                    />
-                ))}
-            </BlogGrid>
         </BlogSection>
     )
 }

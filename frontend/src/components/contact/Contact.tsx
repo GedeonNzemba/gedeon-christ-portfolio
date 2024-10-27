@@ -65,7 +65,7 @@ const TextArea = styled.textarea`
   }
 `
 
-const Graphic = styled.img<{flash?: boolean; path?: boolean;}>`
+const Graphic = styled.img<{flash?: boolean; path?: boolean; bluredHalfCircle?: boolean; halfCircle?: boolean}>`
 position: absolute;
  z-index: 999;
 
@@ -81,6 +81,20 @@ position: absolute;
       bottom: 25%;
       right: 5%;
       width: 6rem;
+ `}
+
+ ${$props => $props.bluredHalfCircle && 
+ css`
+      bottom: 5rem;
+      left: 0;
+      width: 18%;
+ `}
+
+ ${$props => $props.halfCircle && 
+ css`
+      bottom: 25%;
+      left: 0;
+      width: 10rem;
  `}
 `
 
@@ -114,8 +128,11 @@ const Contact = () => {
     return (
         <FormContainer>
             <Heading header marginBottom>Contact me</Heading>
+            {/* <Graphic bluredHalfCircle src={require('../../assets/contact_us_blurred_path.png')} alt="graphic" />
+            <Graphic halfCircle src={require('../../assets/contact_us_path.png')} alt="graphic" /> */}
+
             <Graphic path src={require('../../assets/path_b.png')} alt="graphic" />
-            <Graphic flash src={require('../../assets/my-skills-flash.png')} alt="graphic" />
+            <Graphic flash src={require('../../assets/contact_us_right_arrow.png')} alt="graphic" />
             <StyledForm onSubmit={handleSubmit}>
                 <Label htmlFor="fullName">Full name *</Label>
                 <Input
