@@ -118,7 +118,7 @@ function MySkills() {
     ]
 
     return (
-        <MySkillsContainer>
+        <MySkillsContainer id='skills'>
             <Container>
                 <Section>
                     <Wrapper>

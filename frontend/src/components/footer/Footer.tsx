@@ -163,7 +163,7 @@ const defaultNavLinks = [
 
 const Footer: React.FC<FooterProps> = ({name = 'Gedeon Christ', navigationLinks = defaultNavLinks, socialIcons = defaultSocialIcons, year = new Date().getFullYear() }) => {
   return (
-    <FooterContainer>
+    <FooterContainer id='footer'>
       <TopFooter>
         <TopFooterLeft>
           <FooterHeading>Follow me</FooterHeading>

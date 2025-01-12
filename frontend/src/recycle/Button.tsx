@@ -15,6 +15,7 @@ interface ButtonProps {
     type?: 'submit' | 'reset';
     textTransform?: string;
     onClick?: () => void;
+    id?: string;
     children: React.ReactNode;
 }
 
@@ -59,10 +60,12 @@ const Button: FC<ButtonProps> = ({
     type,
     round,
     onClick,
+    id,
     children,
 }) => {
     return (
         <StyledButton
+            id={id}
             backgroundColor={backgroundColor}
             textColor={textColor}
             hoverBackgroundColor={hoverBackgroundColor}

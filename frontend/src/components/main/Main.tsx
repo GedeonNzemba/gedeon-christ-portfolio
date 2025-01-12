@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components'
 import '../../App.css';
 import About from '../about/About';
@@ -17,16 +17,38 @@ function Main() {
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 5rem;
+
+    /* Add scroll padding to account for fixed navbar */
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+
+    /* Target all sections with IDs */
+    > section[id],
+    > div[id],
+    > form[id],
+    > footer[id] {
+      scroll-margin-top: 7rem;
+    }
   `
+
+  useEffect(() => {
+    // Add smooth scroll behavior to the html element
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+
   return (
-      <Container>
-        <About />
-        <MySkills />
-        <Project />
-        <Blogs />
-        <Contact />
-        <Footer />
-      </Container>
+    <Container>
+      <About />
+      <MySkills />
+      <Project />
+      <Blogs />
+      <Contact />
+      <Footer />
+    </Container>
   );
 }
 

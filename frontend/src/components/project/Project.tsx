@@ -59,7 +59,7 @@ function Projects() {
 
 
     return (
-        <Container>
+        <Container id="project">
             <Heading header>my projects</Heading>
             {/* X ICON */}
             <Graphic

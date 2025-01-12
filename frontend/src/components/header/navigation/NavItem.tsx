@@ -18,13 +18,8 @@ const NavItem = ({ initialActiveIndex = 0 }: Props) => {
     `;
 
     const MenuItem = styled.li<{ isActive: boolean }>`
-        font-family: "Rubik", sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.826);
         display: inline-block;
         margin-left: 2.5rem;
-        text-transform: capitalize;
         cursor: pointer;
         transition: color 0.3s ease;
         position: relative;
@@ -49,18 +44,34 @@ const NavItem = ({ initialActiveIndex = 0 }: Props) => {
         }
     `;
 
-    const menuItems = ['home', 'projects', 'blog', 'contact'];
+    const Anchor = styled.a`
+        text-decoration: none;
+        font-family: "Rubik", sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.826);
+        text-transform: capitalize;
+        cursor: pointer;
+
+        &:hover {
+            color: #ffffff;
+        }
+    `;
+
+    const menuItems = ['home', 'project', 'blog', 'contact'];
+    const menuItemsWithId = menuItems.map((item, index) => ({ id: index, name: item }));
+
 
     return (
         <Menu>
             <MenuList>
-                {menuItems.map((item, index) => (
+                {menuItemsWithId.map(({ id, name }) => (
                     <MenuItem
-                        key={index}
-                        isActive={activeIndex === index}  // Check if current index matches active index
-                        onClick={() => setActiveIndex(index)}  // Set active index on click
+                        key={id}
+                        isActive={activeIndex === id}
+                        onClick={() => setActiveIndex(id)}
                     >
-                        {item}
+                        <Anchor href={`#${name}`}>{name}</Anchor>
                     </MenuItem>
                 ))}
             </MenuList>

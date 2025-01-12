@@ -98,7 +98,7 @@ position: absolute;
 
 const Blogs = () => {
     return (
-        <BlogSection>
+        <BlogSection id="blog">
             <Header>
                 {/* <Title>My blog</Title> */}
                 <Heading header marginBottom>My blog</Heading>

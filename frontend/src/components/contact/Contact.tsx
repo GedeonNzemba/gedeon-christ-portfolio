@@ -126,7 +126,7 @@ const Contact = () => {
     }
 
     return (
-        <FormContainer>
+        <FormContainer id="contact">
             <Heading header marginBottom>Contact me</Heading>
             {/* <Graphic bluredHalfCircle src={require('../../assets/contact_us_blurred_path.png')} alt="graphic" />
             <Graphic halfCircle src={require('../../assets/contact_us_path.png')} alt="graphic" /> */}

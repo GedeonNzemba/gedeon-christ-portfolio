@@ -30,7 +30,7 @@ function Header() {
 
 
     return (
-        <Header>
+        <Header id="home">
             <Navbar />
             <Box src={require('../../assets/Vector Smart Object.png')} />
             <BoxTransparent src={require('../../assets/bg_background.png')} />

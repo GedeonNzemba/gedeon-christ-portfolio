@@ -15,7 +15,7 @@ function About() {
   `
   const Section = styled.section<{image?: boolean}>`
     position: relative;
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@ function About() {
     ${$props => $props.image && 
     css`
         position: relative;
-        border: 1px solid blue;
+        // border: 1px solid blue;
 
         &::after {
             content: "About";
@@ -106,7 +106,7 @@ function About() {
 
 
     return (
-        <Container>
+        <Container id='about'>
             <Section image>
                 <Image src={require('../../assets/about-me-image.png')} alt="about-me image" />
                 <Graphic ball src={require('../../assets/about-me-ball.png')} alt="graphic" />
