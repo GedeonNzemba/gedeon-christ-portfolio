@@ -17,7 +17,7 @@ function Navbar() {
     border-width: 1px;
     border-color: rgba(115, 77, 239, 0.256);
     background-color: rgba(19, 19, 19, 0.6);
-    padding: 1rem 1rem;
+    padding: 1rem 1.8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -110,7 +110,7 @@ const Content = () => {
 
             @media (max-width: 899px)  {
                 position: absolute;
-                top: 7.5rem;
+                top: 10.5rem;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 87%;
@@ -118,7 +118,7 @@ const Content = () => {
             }
 
             @media (max-width: 768px) {
-                top: 10.5rem;
+                top: 14rem;
                 font-size: 2.2rem;
             }
 

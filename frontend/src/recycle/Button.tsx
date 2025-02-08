@@ -12,6 +12,7 @@ interface ButtonProps {
     fontSize?: string;
     alignSelf?: string;
     padding?: boolean;
+    margin?: boolean;
     type?: 'submit' | 'reset';
     textTransform?: string;
     onClick?: () => void;
@@ -29,6 +30,7 @@ const StyledButton = styled.button<ButtonProps>`
   text-transform: ${(props) => props.textTransform};
   border: none;
   padding: ${(props) => props.padding ? '0.8rem 3rem' : '10px 20px'};
+  margin: ${(props) => props.margin ? '2rem 3rem' : '10px 20px'};
   height: fit-content;
   width: fit-content;
   text-transform: capitalize;
@@ -57,6 +59,7 @@ const Button: FC<ButtonProps> = ({
     textTransform,
     alignSelf,
     padding,
+    margin,
     type,
     round,
     onClick,
@@ -76,6 +79,7 @@ const Button: FC<ButtonProps> = ({
             fontSize={fontSize}
             alignSelf={alignSelf}
             padding={padding}
+            margin={margin}
             round={round}
             type={type}
             onClick={onClick}

@@ -14,44 +14,60 @@ function Projects() {
     flex-direction: column;
     justify-content: center;
   `;
-    const Graphic = styled.img<{path?: boolean; path_b?: boolean; verticalFlash?: boolean; x?: boolean; xx?: boolean}>`
+    const Graphic = styled.img<{ path?: boolean; path_b?: boolean; verticalFlash?: boolean; x?: boolean; xx?: boolean }>`
     position: absolute;
     z-index: 999;
 
-    ${$props => $props.x && 
-    css`
+    ${$props => $props.x &&
+            css`
         top: 7rem;
         right: 5%;
         width: 3rem;
     `}
 
-    ${$props => $props.xx && 
-    css`
+    ${$props => $props.xx &&
+            css`
         top: 83rem;
         left: 10rem;
         width: 2rem;
     `}
 
-    ${$props => $props.path && 
-    css`
+    ${$props => $props.path &&
+            css`
          top: 40rem;
          left: 16%;
          width: 20rem;
+
+         @media (max-width: 599px) {
+             width: clamp(12rem, 40vw, 18rem);
+             left: 1rem;
+         }
     `}
 
-    ${$props => $props.path_b && 
-    css`
+    ${$props => $props.path_b &&
+            css`
          top: 90rem;
     right: 5%;
     width: 6rem;
     object-fit: contain;
+
+    @media (max-width: 599px) {
+        width: 4.5rem;
     `}
 
-    ${$props => $props.verticalFlash && 
-    css`
+    ${$props => $props.verticalFlash &&
+            css`
          top: 50rem;
-    left: 20rem;
-    width: 3rem;
+            left: 20rem;
+            width: 3rem;
+
+            @media (max-width: 599px) {
+            top: unset;
+            bottom: 20rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+                width: clamp(2rem, 6vw, 2rem);
+            }
 
     `}
 
@@ -68,8 +84,8 @@ function Projects() {
                 alt="x icon"
             />
 
-             {/* X small ICON */}
-             <Graphic
+            {/* X small ICON */}
+            <Graphic
                 xx
                 src={require("../../assets/x_small.png")}
                 alt="x small icon"
@@ -121,13 +137,13 @@ function Projects() {
             />
 
             <Button
-            backgroundColor="unset"
-            textColor={ "rgb(178, 30, 178)"}
-            fontFamily={"Rubik"}
-            fontWeight={400}
-            fontSize="1.5rem"
-            textTransform="normal"
-            alignSelf="center"
+                backgroundColor="unset"
+                textColor={"rgb(178, 30, 178)"}
+                fontFamily={"Rubik"}
+                fontWeight={400}
+                fontSize="1.5rem"
+                textTransform="normal"
+                alignSelf="center"
             >
                 See more projects &#10095; &#10095;
             </Button>

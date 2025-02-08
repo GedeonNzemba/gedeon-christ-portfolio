@@ -16,10 +16,14 @@ function MySkills() {
         flex-direction: row;
         justify-content: space-between;
 
-        ${$props => $props.skills &&
-        css`
-        margin-top: 8rem;
-        margin-bottom: unset;
+        @media (max-width: 599px) {
+            justify-content: center;
+            column-gap: 1rem;
+        }
+
+        ${$props => $props.skills && css`
+            margin-top: 8rem;
+            margin-bottom: unset;
             justify-content: center;
         `}
     `
@@ -28,12 +32,27 @@ function MySkills() {
         flex-direction: column;
         justify-content: space-evenly;
     `
-    const Section = styled.section<{skills?: boolean}>`
+    const Section = styled.section<{skills?: boolean; heading?: boolean; graphic?: boolean}>`
         position: relative;
         width: 50%;
         display: flex;
         flex-direction: row;
         justify-content: center;
+
+        ${$props => $props.graphic &&
+        css`
+           @media (max-width: 599px) {
+             width: 35%;
+        }
+        `}
+
+        ${$props => $props.heading &&
+        css`
+             @media (max-width: 599px) {
+             width: auto;
+        }
+
+        `}
 
         ${$props => $props.skills &&
         css`
@@ -42,6 +61,11 @@ function MySkills() {
             grid-template-columns: repeat(2, 1fr);
             column-gap: 3rem;
             row-gap: 2.5rem;
+
+            @media (max-width: 599px) {
+                width: 67%;
+                grid-template-columns: repeat(1, 1fr);
+            }
         `}
     `
     const TextWrapper = styled.div`
@@ -55,6 +79,14 @@ function MySkills() {
             line-height: 5rem;
             text-transform: initial;
 
+            @media (max-width: 899px) {
+                font-size: 5rem;
+            }
+            
+            @media (max-width: 599px) {
+                font-size: clamp(3rem, 10vw, 6rem);
+            }
+
             ${$props => $props.skill &&
             css`
     font-family: 'Rubik', sans-serif;
@@ -65,6 +97,10 @@ function MySkills() {
             max-width: none;
             line-height: 1rem;
             /* text-transform: uppercase; */
+
+            @media (max-width: 899px) {
+                font-size: 1.2rem;
+            }
     `}
     `
     const SkillsContainer = styled.div`
@@ -78,6 +114,14 @@ function MySkills() {
     const Graphic = styled.img`
     object-fit: contain;
      width: 30rem;
+
+     @media (max-width: 899px) {
+        width: 15rem;
+     }
+
+     @media (max-width: 599px) {
+        width: calc(8rem + (8 * (100vw / 599)));
+     }
     `
     const SkillsIndicator = styled.div`
      
@@ -120,7 +164,7 @@ function MySkills() {
     return (
         <MySkillsContainer id='skills'>
             <Container>
-                <Section>
+                <Section heading>
                     <Wrapper>
                         <TextWrapper>
                             <Text>My skills</Text>
@@ -138,7 +182,7 @@ function MySkills() {
                     </Wrapper>
                 </Section>
 
-                <Section>
+                <Section graphic>
                     <Wrapper>
                         <Graphic src={require('../../assets/my-skills-flash.png')} alt="my skills right indicator" />
 

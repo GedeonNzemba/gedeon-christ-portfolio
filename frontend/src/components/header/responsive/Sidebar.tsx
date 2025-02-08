@@ -111,9 +111,9 @@ const NavItemWrapper = styled.div`
 `;
 
 const DarkModeWrapper = styled.div`
-  padding: 1rem 0;
-  border-top: 1px solid rgba(115, 77, 239, 0.256);
-  border-bottom: 1px solid rgba(115, 77, 239, 0.256);
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(115, 77, 239, 0.256);
+  border-radius: 25px;
 `;
 
 const ButtonWrapper = styled.div`

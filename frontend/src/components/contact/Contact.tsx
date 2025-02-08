@@ -4,12 +4,21 @@ import Heading from '../../recycle/Heading'
 import Button from '../../recycle/Button'
 
 const FormContainer = styled.div`
-  /* background: linear-gradient(135deg, #2d1f3d 0%, #1a1625 100%); */
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   border-radius: 10px;
-  max-width: 100%;
-  margin: 10rem auto 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: clamp(5rem, 8vw, 10rem) auto 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 85%;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 1rem;
+  }
 `
 
 const Title = styled.h1`
@@ -24,26 +33,39 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 6rem auto 0 auto;
+  margin: clamp(3rem, 5vw, 6rem) auto 0;
+  width: 100%;
   max-width: 50rem;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 const Label = styled.label`
-  margin-left: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-left: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   color: #fff;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
 `
 
 const Input = styled.input`
-  padding: 1.2rem 2rem;
-  margin-bottom: 2.5rem;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   border-radius: 10rem;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   border: none;
   background-color: rgba(178, 30, 178, 0.18);
   color: white;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background-color: rgba(178, 30, 178, 0.25);
+  }
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.5);
@@ -51,14 +73,22 @@ const Input = styled.input`
 `
 
 const TextArea = styled.textarea`
-  padding: 1.2rem 2rem;
-  margin-bottom: 3rem;
-  border-radius: 1.2rem;
-  font-size: 0.9rem;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 3vw, 3rem);
+  border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   border: none;
   background-color: rgba(178, 30, 178, 0.18);
   color: white;
-  min-height: 100px;
+  min-height: clamp(80px, 15vw, 100px);
+  width: 100%;
+  resize: vertical;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background-color: rgba(178, 30, 178, 0.25);
+  }
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.5);
@@ -66,36 +96,81 @@ const TextArea = styled.textarea`
 `
 
 const Graphic = styled.img<{flash?: boolean; path?: boolean; bluredHalfCircle?: boolean; halfCircle?: boolean}>`
-position: absolute;
- z-index: 999;
+  position: absolute;
+  z-index: 999;
+  transition: all 0.3s ease;
 
- ${$props => $props.flash && 
- css`
-      bottom: 25%;
-      right: 15%;
-      width: 10rem;
- `}
+  @media (max-width: 768px) {
+    opacity: 0.7;
+  }
 
- ${$props => $props.path && 
- css`
-      bottom: 25%;
+  @media (max-width: 480px) {
+    opacity: 0.5;
+  }
+
+  ${$props => $props.flash && 
+  css`
+    bottom: 25%;
+    right: 15%;
+    width: clamp(6rem, 12vw, 10rem);
+
+    @media (max-width: 768px) {
+      right: 10%;
+      bottom: 20%;
+    }
+
+    @media (max-width: 480px) {
       right: 5%;
-      width: 6rem;
- `}
+      bottom: 15%;
+    }
+  `}
 
- ${$props => $props.bluredHalfCircle && 
- css`
-      bottom: 5rem;
-      left: 0;
-      width: 18%;
- `}
+  ${$props => $props.path && 
+  css`
+    bottom: 25%;
+    right: 5%;
+    width: clamp(4rem, 8vw, 6rem);
 
- ${$props => $props.halfCircle && 
- css`
-      bottom: 25%;
-      left: 0;
-      width: 10rem;
- `}
+    @media (max-width: 768px) {
+      right: 2%;
+      bottom: 20%;
+    }
+
+    @media (max-width: 480px) {
+      right: 0;
+      bottom: 15%;
+    }
+  `}
+
+  ${$props => $props.bluredHalfCircle && 
+  css`
+    bottom: 5rem;
+    left: 0;
+    width: clamp(15%, 18vw, 18%);
+
+    @media (max-width: 768px) {
+      bottom: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      bottom: 2rem;
+    }
+  `}
+
+  ${$props => $props.halfCircle && 
+  css`
+    bottom: 25%;
+    left: 0;
+    width: clamp(6rem, 12vw, 10rem);
+
+    @media (max-width: 768px) {
+      bottom: 20%;
+    }
+
+    @media (max-width: 480px) {
+      bottom: 15%;
+    }
+  `}
 `
 
 interface FormData {

@@ -26,6 +26,10 @@ const Text = styled.div<HeadingProps>`
         text-transform: capitalize;
         font-weight: 800;
         margin-bottom: ${(props) => $props.marginBottom ? '3rem' : '10rem'};
+
+        @media (max-width: 599px) {
+            font-size: clamp(3rem, 10vw, 6rem);
+        }
     `}
 
   ${$props => $props.title && 
@@ -33,6 +37,10 @@ const Text = styled.div<HeadingProps>`
         font-size: 3.5rem;
         line-height: 1.5;
         font-weight: 700;
+
+        @media (max-width: 599px) {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+        }
     `}
 
     ${$props => $props.subtitle && 
@@ -40,7 +48,11 @@ const Text = styled.div<HeadingProps>`
         font-size: 2.8rem;
         line-height: 1;
         font-weight: 400;
-        color: #a5a5a5
+        color: #a5a5a5;
+
+         @media (max-width: 599px) {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+        }
     `}
 `;
 

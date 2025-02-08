@@ -22,6 +22,11 @@ const Indicator: React.FC<IProps> = ({iterate}) => {
     height: 1rem;
     border-radius: 50%;
     margin-right: 0.5rem;
+
+    @media (max-width: 899px) {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
   `
   const LightCircle = styled.div`
     background-color: rgb(178, 30, 178);
@@ -31,6 +36,11 @@ const Indicator: React.FC<IProps> = ({iterate}) => {
     border-radius: 50%;
     opacity: 0.149;
      margin-right: 0.5rem;
+
+     @media (max-width: 899px) {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
 
   `
   const Circle = styled.div`

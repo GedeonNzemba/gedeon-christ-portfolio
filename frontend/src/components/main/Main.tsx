@@ -18,6 +18,10 @@ function Main() {
     background-repeat: no-repeat;
     padding-top: 5rem;
 
+    @media (max-width: 1024px) {
+       padding-top: 10rem;
+    }
+
     /* Add scroll padding to account for fixed navbar */
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
